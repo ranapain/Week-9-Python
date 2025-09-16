@@ -1,0 +1,10 @@
+class Solution:
+    def duplicates(self, arr, n):
+        freq = {}
+        res = []
+        for x in arr:
+            freq[x] = freq.get(x, 0) + 1
+        for k in sorted(freq.keys()):
+            if freq[k] > 1:
+                res.append(k)
+        return res if res else [-1]
