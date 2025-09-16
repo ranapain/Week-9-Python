@@ -1,0 +1,6 @@
+class Solution:
+    def separateChaining(self, hashSize, arr, sizeOfArray):
+        hashTable = [[] for _ in range(hashSize)]
+        for key in arr:
+            hashTable[key % hashSize].append(key)
+        return hashTable
