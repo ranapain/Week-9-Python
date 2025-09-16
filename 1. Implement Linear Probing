@@ -1,0 +1,13 @@
+class Solution:
+    def linearProbing(self, hashSize, arr, sizeOfArray):
+        hashTable = [-1] * hashSize
+        for key in arr:
+            index = key % hashSize
+            start = index
+            while hashTable[index] != -1 and hashTable[index] != key:
+                index = (index + 1) % hashSize
+                if index == start:
+                    break
+            if hashTable[index] == -1:
+                hashTable[index] = key
+        return hashTable
