@@ -1,0 +1,10 @@
+from collections import defaultdict
+
+class Solution:
+    def getPairsCount(self, arr, n, k):
+        freq = defaultdict(int)
+        count = 0
+        for num in arr:
+            count += freq[k - num]
+            freq[num] += 1
+        return count
