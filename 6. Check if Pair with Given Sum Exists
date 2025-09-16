@@ -1,0 +1,8 @@
+class Solution:
+    def sumExists(self, arr, N, sum):
+        seen = set()
+        for x in arr:
+            if sum - x in seen:
+                return 1
+            seen.add(x)
+        return 0
